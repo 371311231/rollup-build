@@ -1,15 +1,15 @@
-import _ from 'lodash';
-import sum from './module/tools/sum';
-import dayjs from './module/dayjs/dayjs';
+import _ from 'lodash'
+import sum from './module/tools/sum'
+import dayjs from './module/dayjs/dayjs'
 
-console.log("rollup build bundle.js test ------");
+console.log('rollup build bundle.js test ------')
 
-const arrayToString = _.join(['a', 'b', 'c'], '~');
+const arrayToString = _.join(['a', 'b', 'c'], '~')
 
-console.log(arrayToString);
+console.log(arrayToString)
 
-console.log('now time:', dayjs().format('YYYY-MM-DD HH:mm:ss'));
+console.log('now time:', dayjs().format('YYYY-MM-DD HH:mm:ss'))
 
-sum(5, 4);
+sum(5, 4)
 
-export { dayjs, sum };
+export { dayjs, sum }

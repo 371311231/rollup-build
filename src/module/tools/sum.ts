@@ -1,5 +1,5 @@
 const sum = (x: number, y: number) => {
-  console.log('this is fn sum:', x + y);
+  console.log('this is fn sum:', x + y)
 }
 
-export default sum;
+export default sum
