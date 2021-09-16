@@ -10,12 +10,9 @@ module.exports = {
     es2021: true,
     node: true
   },
-  extends: [
-    'standard'
-  ],
-  plugins: [
-    '@typescript-eslint'
-  ],
+  extends: ['standard'],
+  plugins: ['@typescript-eslint'],
   rules: {
+    semi: ['error', 'always']
   }
-}
+};

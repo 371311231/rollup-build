@@ -34,14 +34,17 @@
     "babel-jest": "^27.2.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^5.1.0",
     "husky": "^7.0.2",
     "jest": "^27.2.0",
     "lint-staged": "^11.1.2",
     "lodash": "^4.17.21",
+    "prettier": "^2.4.1",
     "rollup-plugin-serve": "^1.1.0",
     "ts-jest": "^27.0.5",
     "tslib": "^2.3.1",
@@ -54,19 +57,17 @@
   },
   "scripts": {
     "test": "jest",
-    "lint": "eslint --fix './src/**/*.{ts,tsx,js,jsx,json}'",
+    "eslint-fix": "eslint --ext .ts,.tsx,.js,.jsx,json --fix ./src",
+    "static-check": "tsc",
+    "prettier-style": "prettier --write ./src",
     "server": "cross-env NODE_ENV=development rollup -c build/rollup.config.js -w",
     "build:types": "tsc",
     "build": "cross-env NODE_ENV=production rollup -c build/rollup.config.js && tsc"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json}": [
-      "eslint --fix './src/**/*.{ts,tsx,js,jsx,json}'",
+      "prettier --write ./src",
+      "eslint --ext .ts,.tsx,.js,.jsx,json --fix ./src",
       "git add"
     ]
   }
