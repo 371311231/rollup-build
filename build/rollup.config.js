@@ -1,25 +1,25 @@
-import typescript from '@rollup/plugin-typescript'
-import resolve from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-import { babel } from '@rollup/plugin-babel'
-import serve from 'rollup-plugin-serve'
-import pkg from '../package.json'
+import typescript from '@rollup/plugin-typescript';
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import { babel } from '@rollup/plugin-babel';
+import serve from 'rollup-plugin-serve';
+import pkg from '../package.json';
 
-const path = require('path')
+const path = require('path');
 
-const isDev = process.env.NODE_ENV !== 'production'
+const isDev = process.env.NODE_ENV !== 'production';
 
-console.log('----------dev:', process.env.NODE_ENV, isDev)
+console.log('----------dev:', process.env.NODE_ENV, isDev);
 
 // 一段自定义的内容，以下内容会添加到打包结果中
 const footer = `
 if (typeof window !== 'undefined') {
   window._CURRENT_VERSION_ = '${pkg.version}'
-}`
+}`;
 
 const resolveFile = function (filePath) {
-  return path.join(__dirname, '..', filePath)
-}
+  return path.join(__dirname, '..', filePath);
+};
 
 export default {
   input: 'src/index.ts',
@@ -62,15 +62,15 @@ export default {
     }),
     isDev
       ? serve({
-        open: false,
-        host: 'localhost',
-        port: 8888,
-        contentBase: [resolveFile('example'), resolveFile('lib')],
-        historyApiFallback: true,
-        headers: {
-          'Access-Control-Allow-Origin': '*'
-        }
-      })
+          open: false,
+          host: 'localhost',
+          port: 8888,
+          contentBase: [resolveFile('example'), resolveFile('lib')],
+          historyApiFallback: true,
+          headers: {
+            'Access-Control-Allow-Origin': '*'
+          }
+        })
       : null
   ]
-}
+};

@@ -13,6 +13,7 @@ module.exports = {
   extends: ['standard'],
   plugins: ['@typescript-eslint'],
   rules: {
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    indent: 'off'
   }
 };
