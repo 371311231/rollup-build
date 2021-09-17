@@ -57,6 +57,7 @@
   },
   "scripts": {
     "test": "jest",
+    "prepare": "husky install",
     "eslint-fix": "eslint --ext .ts,.tsx,.js,.jsx,json --fix ./src",
     "static-check": "tsc",
     "prettier-style": "prettier --write ./src",
@@ -67,8 +68,7 @@
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json}": [
       "prettier --write ./src",
-      "eslint --ext .ts,.tsx,.js,.jsx,json --fix ./src",
-      "git add"
+      "eslint --ext .ts,.tsx,.js,.jsx,json --fix ./src"
     ]
   }
 }
