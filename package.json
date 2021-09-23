@@ -1,6 +1,6 @@
 {
   "name": "rollup-build-test-package",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "keywords": [],
   "author": "371311231@qq.com",
@@ -35,7 +35,7 @@
     "babel-jest": "^27.2.0",
     "commitizen": "^4.2.4",
     "commitlint-config-gitmoji": "^2.2.5",
-    "conventional-changelog-cli": "^2.1.1",
+    "conventional-changelog-gitmoji-config": "^1.4.3",
     "cross-env": "^7.0.3",
     "cz-customizable": "^6.3.0",
     "eslint": "^7.32.0",
@@ -52,6 +52,7 @@
     "lodash": "^4.17.21",
     "prettier": "^2.4.1",
     "rollup-plugin-serve": "^1.1.0",
+    "standard-version": "^9.3.1",
     "ts-jest": "^27.0.5",
     "tslib": "^2.3.1",
     "typescript": "^4.4.3"
@@ -70,7 +71,7 @@
     "server": "cross-env NODE_ENV=development rollup -c build/rollup.config.js -w",
     "build:types": "tsc",
     "build": "cross-env NODE_ENV=production rollup -c build/rollup.config.js && tsc",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "release": "standard-version --preset gitmoji-config"
   },
   "config": {
     "commitizen": {
