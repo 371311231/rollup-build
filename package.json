@@ -1,6 +1,6 @@
 {
   "name": "rollup-build-test-package",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "",
   "keywords": [],
   "author": "371311231@qq.com",
@@ -69,7 +69,6 @@
     "static-check": "tsc",
     "prettier-style": "prettier --write ./src",
     "server": "cross-env NODE_ENV=development rollup -c build/rollup.config.js -w",
-    "build:types": "tsc",
     "build": "cross-env NODE_ENV=production rollup -c build/rollup.config.js && tsc",
     "release": "standard-version --preset gitmoji-config"
   },
