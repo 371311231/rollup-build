@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.18](https://github.com/371311231/rollup-build/compare/v0.0.16...v0.0.18) (2021-09-28)
+
+
+### 🔧 Continuous Integration
+
+* 取消build:type script ([1dbf4cd](https://github.com/371311231/rollup-build/commit/1dbf4cd))
+* 调整github workflow对代码校验 ([1cdf322](https://github.com/371311231/rollup-build/commit/1cdf322))
+
+
+
 ## [0.0.17](https://github.com/371311231/rollup-build/compare/v0.0.16...v0.0.17) (2021-09-27)
 
 
