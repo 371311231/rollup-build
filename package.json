@@ -64,13 +64,14 @@
   },
   "scripts": {
     "test": "jest",
-    "prepare": "husky install",
     "eslint-fix": "eslint --ext .ts,.tsx,.js,.jsx,json --fix ./src",
     "static-check": "tsc",
     "prettier-style": "prettier --write ./src",
     "server": "cross-env NODE_ENV=development rollup -c build/rollup.config.js -w",
     "build": "cross-env NODE_ENV=production rollup -c build/rollup.config.js && tsc",
-    "release": "standard-version --preset gitmoji-config"
+    "release": "standard-version --preset gitmoji-config",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build"
   },
   "config": {
     "commitizen": {
